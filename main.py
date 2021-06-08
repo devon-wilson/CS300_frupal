@@ -2,12 +2,12 @@
 #Date 1/16/20
 #File main.py
 #Desc Main entry point for the game
-
+#test change and some more of those
 from screen import screenManager, splashScreen
 from tile import Tiles
 from user import user
-from item import add_item
-from entity import add_entity
+from item import addItem
+from entity import addEntity
 from config import loadConfig
 
 from platform import system
@@ -21,7 +21,7 @@ if "win" in system().lower(): #works for Win7, 8, 10 ...
     from ctypes import windll
     kernel=windll.kernel32
     kernel.SetConsoleMode(kernel.GetStdHandle(-11),7)
-
+  
 class Camera:
 	x = 0
 	y = 0
@@ -60,10 +60,10 @@ def init():
 	state = GameState()
 
 	loadConfig(state)
-	state.total_entity_chance = 0
+	state.totalEntityChance = 0
 
-	add_entity(state, "Magic Jewel", 0.0)
-	add_entity(state, "Greedy Tile", 0.0075)
+	addEntity(state, "Magic Jewel", 0.0)
+	addEntity(state, "Greedy Tile", 0.0075)
 
 	#screenManager.setScreen(state, menu())
 	screenManager.setScreen(state, splashScreen())
